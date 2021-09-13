@@ -1,0 +1,49 @@
+﻿@model Cadastro.Models.Veiculo
+
+@{
+    ViewData["Title"] = "CriarVeiculo";
+}
+
+<h2>Cadastrar Veículos</h2>
+
+<h4>Dados</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarVeiculo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Placa" class="control-label"></label>
+                <input asp-for="Placa" class="form-control" />
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Renavan" class="control-label"></label>
+                <input asp-for="Renavan" class="form-control" />
+                <span asp-validation-for="Renavan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeProprietario" class="control-label"></label>
+                <input asp-for="NomeProprietario" class="form-control" />
+                <span asp-validation-for="NomeProprietario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Cadastrar Veiculos" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Lista de Cadastro</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

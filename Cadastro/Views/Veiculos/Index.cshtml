@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Cadastro.Models.Veiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Veículos</h2>
+
+<p>
+    <a asp-action="CriarVeiculo">Cadastrar Veículos</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Renavan)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Renavan)
+            </td>
+            
+            <td>
+                <a asp-action="AtualizarVeiculo" asp-route-id="@item.Veiculoid">Editar</a> |
+                <a asp-action="Visualizar" asp-route-id="@item.Veiculoid">Visualizar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
